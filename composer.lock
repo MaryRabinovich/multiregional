@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e6e7fe5fd9d19060838a2fee2857ca4",
+    "content-hash": "cdc8aaf22c96175fb13be49ecb507189",
     "packages": [
         {
             "name": "brick/math",
@@ -1759,6 +1759,32 @@
                 }
             ],
             "time": "2022-04-17T13:12:02+00:00"
+        },
+        {
+            "name": "modules/multiregional",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "modules/multiregional",
+                "reference": "97f35609fd061da1662bfc0faf8a7980dcc721f7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "\\Modules\\Multiregional\\MultiregionalServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\Multiregional\\": "src/"
+                }
+            },
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "monolog/monolog",
@@ -7883,7 +7909,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "modules/multiregional": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

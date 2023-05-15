@@ -1,0 +1,16 @@
+{
+    "name": "modules/multiregional",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Modules\\Multiregional\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\Modules\\Multiregional\\MultiregionalServiceProvider"
+            ]
+        }
+    }
+}
