@@ -1766,7 +1766,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/multiregional",
-                "reference": "97f35609fd061da1662bfc0faf8a7980dcc721f7"
+                "reference": "8f79c8b9d3751ce7157722d6512471555c48095a"
             },
             "type": "library",
             "extra": {
@@ -1779,6 +1779,11 @@
             "autoload": {
                 "psr-4": {
                     "Modules\\Multiregional\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Modules\\MultiregionalTests\\": "tests/"
                 }
             },
             "transport-options": {

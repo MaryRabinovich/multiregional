@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace Modules\Multiregional;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -21,7 +21,7 @@ class MultiregionalComponent extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.multiregional-component')->with([
+        return view('multiregional-component')->with([
             'test' => 'some test data'
         ]);
     }

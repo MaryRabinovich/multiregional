@@ -2,6 +2,8 @@
 
 namespace Modules\Multiregional;
 
+use Illuminate\Console\View\Components\Alert;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class MultiregionalServiceProvider extends ServiceProvider
@@ -19,6 +21,6 @@ class MultiregionalServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // dd('From multiregional provider');
+        Blade::component(MultiregionalComponent::class, 'multiregional-component');
     }
 }
