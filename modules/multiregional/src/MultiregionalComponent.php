@@ -4,18 +4,19 @@ namespace Modules\Multiregional;
 
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 use Illuminate\View\Component;
 
 class MultiregionalComponent extends Component
 {
     protected array $regions;
 
-    protected string $choosen;
+    protected ?string $choosen;
 
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
         $this->regions = [
             ['en' => 'kazan', 'ru' => 'Казань'],
@@ -24,7 +25,7 @@ class MultiregionalComponent extends Component
             ['en' => 'st-petersburg', 'ru' => 'Петербург'],
         ];
 
-        $this->choosen = 'moscow';
+        $this->choosen = $request->region;
     }
 
     /**
