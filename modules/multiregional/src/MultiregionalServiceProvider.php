@@ -22,5 +22,6 @@ class MultiregionalServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Blade::component(MultiregionalComponent::class, 'multiregional-component');
+        $this->loadMigrationsFrom(__DIR__ . '/../multiregional_create_regions_table.php');
     }
 }
