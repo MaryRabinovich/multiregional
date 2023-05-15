@@ -36,4 +36,10 @@ class MultiregionalCookieTest extends TestCase
     {
         $this->get('/regions/moscow')->assertCookie('multiregional', 'moscow');
     }
+
+    /** @test */
+    public function a_regions_route_with_incorrect_region_redirects_to_home_route()
+    {
+        $this->get('/regions/blablabla')->assertRedirect('/');
+    }
 }

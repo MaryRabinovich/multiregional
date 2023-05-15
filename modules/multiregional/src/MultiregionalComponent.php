@@ -19,12 +19,6 @@ class MultiregionalComponent extends Component
      */
     public function __construct(Request $request)
     {
-        // $this->regions = [
-            // ['en' => 'kazan', 'ru' => 'Казань'],
-            // ['en' => 'moscow', 'ru' => 'Москва'],
-            // ['en' => 'novosibirsk', 'ru' => 'Новосибирск'],
-            // ['en' => 'st-petersburg', 'ru' => 'Петербург'],
-        // ];
         $this->regions = Region::all();
 
         $this->choosen = $request->region;

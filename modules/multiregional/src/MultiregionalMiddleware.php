@@ -22,6 +22,9 @@ class MultiregionalMiddleware
         }
 
         if ($request->region) {
+            if (!Region::all()->pluck('en')->contains($request->region)) {
+                return redirect('/');
+            }
             Cookie::queue('multiregional', $request->region);
         }
         
