@@ -4,12 +4,13 @@ namespace Modules\Multiregional;
 
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\View\Component;
 
 class MultiregionalComponent extends Component
 {
-    protected array $regions;
+    protected Collection $regions;
 
     protected ?string $choosen;
 
@@ -18,12 +19,13 @@ class MultiregionalComponent extends Component
      */
     public function __construct(Request $request)
     {
-        $this->regions = [
-            ['en' => 'kazan', 'ru' => 'Казань'],
-            ['en' => 'moscow', 'ru' => 'Москва'],
-            ['en' => 'novosibirsk', 'ru' => 'Новосибирск'],
-            ['en' => 'st-petersburg', 'ru' => 'Петербург'],
-        ];
+        // $this->regions = [
+            // ['en' => 'kazan', 'ru' => 'Казань'],
+            // ['en' => 'moscow', 'ru' => 'Москва'],
+            // ['en' => 'novosibirsk', 'ru' => 'Новосибирск'],
+            // ['en' => 'st-petersburg', 'ru' => 'Петербург'],
+        // ];
+        $this->regions = Region::all();
 
         $this->choosen = $request->region;
     }

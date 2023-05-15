@@ -18,9 +18,9 @@
     <ul class="regions">
         @foreach($regions as $region)
             <li class="regions__item">
-                <a href="/regions/{{$region['en']}}"
-                    class="regions__link {{$region['en'] == $choosen ? 'regions__link-active' : ''}}">
-                    {{$region['ru']}}
+                <a href="/regions/{{$region->en}}"
+                    class="regions__link {{$region->en == $choosen ? 'regions__link-active' : ''}}">
+                    {{$region->ru}}
                 </a>
             </li>
         @endforeach

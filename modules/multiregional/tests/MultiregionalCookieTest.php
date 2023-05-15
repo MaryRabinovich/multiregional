@@ -4,10 +4,19 @@ namespace Modules\MultiregionalTests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Modules\Multiregional\RegionSeeder;
 use Tests\TestCase;
 
 class MultiregionalCookieTest extends TestCase
 {
+    use RefreshDatabase;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->seed(RegionSeeder::class);
+    }
+
     /** @test */
     public function home_route_is_accessible_when_no_cookie_is_set(): void
     {
