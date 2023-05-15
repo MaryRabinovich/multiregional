@@ -18,7 +18,7 @@ class MultiregionalMiddleware
     {
         if ($request->getPathInfo() === '/' && Cookie::has('multiregional')) {
             $region = Cookie::get('multiregional');
-            return redirect("/regions/$region");
+            return redirect(route('multiregional', $region));
         }
 
         if ($request->region) {

@@ -20,7 +20,11 @@ Route::middleware('multiregional')->group(function () {
         return view('welcome');
     });
     
+    /**
+     * Parameter name 'region' is reserved for the multiregional module
+     * You can change the basic route part 'regions'
+     */
     Route::get('/regions/{region}', function () {
         return view('welcome');
-    });
+    })->name('multiregional');
 });
