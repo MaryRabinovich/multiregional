@@ -6,6 +6,11 @@
             "Modules\\Multiregional\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\MultiregionalTests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
