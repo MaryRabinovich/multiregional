@@ -8,12 +8,23 @@ use Illuminate\View\Component;
 
 class MultiregionalComponent extends Component
 {
+    protected array $regions;
+
+    protected string $choosen;
+
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
-        //
+        $this->regions = [
+            ['en' => 'kazan', 'ru' => 'Казань'],
+            ['en' => 'moscow', 'ru' => 'Москва'],
+            ['en' => 'novosibirsk', 'ru' => 'Новосибирск'],
+            ['en' => 'st-petersburg', 'ru' => 'Петербург'],
+        ];
+
+        $this->choosen = 'moscow';
     }
 
     /**
@@ -22,7 +33,8 @@ class MultiregionalComponent extends Component
     public function render(): View|Closure|string
     {
         return view('multiregional-component')->with([
-            'test' => 'some test data'
+            'regions' => $this->regions,
+            'choosen' => $this->choosen
         ]);
     }
 }
