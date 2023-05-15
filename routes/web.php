@@ -15,15 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    if (Cookie::has('multiregional')) {
-        $region = Cookie::get('multiregional');
-        return redirect("/regions/$region");
-    }
-    return view('welcome');
-});
-
-Route::get('/regions/{region}', function (Request $request) {
-    Cookie::queue('multiregional', $request->region);
-    return view('welcome');
+Route::middleware('multiregional')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    
+    Route::get('/regions/{region}', function () {
+        return view('welcome');
+    });
 });
